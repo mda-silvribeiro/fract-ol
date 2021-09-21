@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void					start_image(t_fractal *f)
+void	start_image(t_fractal *f)
 {
 	int		*bpp;
 	int		*sl;
@@ -29,7 +29,7 @@ void					start_image(t_fractal *f)
 	f->fi = 0;
 }
 
-static void				set_variables(t_fractal *f)
+static void	set_variables(t_fractal *f)
 {
 	f->i = 0;
 	if (f->type == 'm' || f->type == 'b')
@@ -54,7 +54,7 @@ static void				set_variables(t_fractal *f)
 	}
 }
 
-void					*loops(t_fractal *f)
+void	*loops(t_fractal *f)
 {
 	start_image(f);
 	f->y = SCREEN_H / 2 * -1;

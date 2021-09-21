@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 13:13:58 by mda-silv          #+#    #+#             */
+/*   Updated: 2021/09/21 13:13:59 by mda-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-static char		*ft_createsave(char *buf, char *str, char **line, int ret)
+static char	*ft_createsave(char *buf, char *str, char **line, int ret)
 {
 	char	*save;
 
@@ -15,7 +27,7 @@ static char		*ft_createsave(char *buf, char *str, char **line, int ret)
 	return (save);
 }
 
-static char		*ft_makestr(const int fd, char *save, char **line)
+static char	*ft_makestr(const int fd, char *save, char **line)
 {
 	char	buf[BUFF_SIZE + 1];
 	char	*str;
@@ -44,14 +56,14 @@ static char		*ft_makestr(const int fd, char *save, char **line)
 	return (ft_createsave(ft_strnew(1), str, line, ret));
 }
 
-static void		addtolst(t_list **list, t_list **head)
+static void	addtolst(t_list **list, t_list **head)
 {
 	*list = *head;
 	ft_lstadd(list, ft_lstnew("\0", 1));
 	*head = *list;
 }
 
-static char		*fd_checker(const int fd, char *save)
+static char	*fd_checker(const int fd, char *save)
 {
 	static t_list	*list;
 	t_list			*head;
@@ -80,7 +92,7 @@ static char		*fd_checker(const int fd, char *save)
 	return (save);
 }
 
-int				get_next_line(const int fd, char **line)
+int	get_next_line(const int fd, char **line)
 {
 	static char			*save;
 

@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void				set_fractal(t_fractal *f, char argument)
+void	set_fractal(t_fractal *f, char argument)
 {
 	f->limit = 10;
 	f->const_r = -0.835;
@@ -25,7 +25,7 @@ void				set_fractal(t_fractal *f, char argument)
 	f->type = argument;
 }
 
-void				open_window(t_fractal *f, char argument)
+void	open_window(t_fractal *f, char argument)
 {
 	mlx_hook(f->win, 2, 2, deal_key, f);
 	mlx_hook(f->win, 17, 17, closing, NULL);
@@ -36,9 +36,9 @@ void				open_window(t_fractal *f, char argument)
 	mlx_loop(f->mlx);
 }
 
-void				choose_fractal(char argument)
+void	choose_fractal(char argument)
 {
-	t_fractal *f;
+	t_fractal	*f;
 
 	f = NULL;
 	while (!f)
@@ -49,7 +49,7 @@ void				choose_fractal(char argument)
 	open_window(f, argument);
 }
 
-int					main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc != 2)
 	{

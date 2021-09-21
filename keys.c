@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-int				deal_key(int key, t_fractal *f)
+int	deal_key(int key, t_fractal *f)
 {
 	if (key == 53)
 		exit(1);
@@ -35,14 +35,14 @@ int				deal_key(int key, t_fractal *f)
 	return (0);
 }
 
-int				closing(void *param)
+int	closing(void *param)
 {
 	(void)param;
 	exit(0);
 	return (0);
 }
 
-int				mouse_move(int x, int y, t_fractal *f)
+int	mouse_move(int x, int y, t_fractal *f)
 {
 	if (x > 0 && x < SCREEN_W && y > 0 && y < SCREEN_H && f->click)
 	{
@@ -62,7 +62,7 @@ int				mouse_move(int x, int y, t_fractal *f)
 	return (0);
 }
 
-int				mouse_press(int button, int x, int y, t_fractal *f)
+int	mouse_press(int button, int x, int y, t_fractal *f)
 {
 	if (button == LEFT_CLICK)
 	{

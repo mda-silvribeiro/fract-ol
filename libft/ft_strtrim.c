@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 13:13:08 by mda-silv          #+#    #+#             */
+/*   Updated: 2021/09/21 13:13:10 by mda-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char		*make_trim(int i, int trim_size, int white_start, const char *s)
+static char	*make_trim(int i, int trim_size, int white_start, const char *s)
 {
 	char	*trim;
 
@@ -16,14 +28,14 @@ static char		*make_trim(int i, int trim_size, int white_start, const char *s)
 	return (trim);
 }
 
-static int		return_i(const char *s, int i)
+static int	return_i(const char *s, int i)
 {
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i--;
 	return (i);
 }
 
-char			*ft_strtrim(const char *s)
+char	*ft_strtrim(const char *s)
 {
 	size_t	i;
 	size_t	white_start;

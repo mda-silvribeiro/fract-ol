@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 13:09:07 by mda-silv          #+#    #+#             */
+/*   Updated: 2021/09/21 13:11:56 by mda-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int		define_i(int *save, int i)
+static int	define_i(int *save, int i)
 {
 	if (*save != 0)
 	{
@@ -12,8 +24,7 @@ static int		define_i(int *save, int i)
 		return (i + 1);
 }
 
-char			*ft_strnstr(const char *haystack,
-				const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;

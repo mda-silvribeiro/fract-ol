@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void			do_colors(t_fractal *f)
+void	do_colors(t_fractal *f)
 {
 	if (f->i < f->it)
 	{
@@ -38,14 +38,14 @@ void			do_colors(t_fractal *f)
 	f->fi += 4;
 }
 
-long double		absolute_ld(long double x)
+long double	absolute_ld(long double x)
 {
 	if (x < 0)
 		return (x * -1);
 	return (x);
 }
 
-void			iterate(t_fractal *f, long double addx, long double addy)
+void	iterate(t_fractal *f, long double addx, long double addy)
 {
 	if (f->type == 'm' || f->type == 'b')
 	{

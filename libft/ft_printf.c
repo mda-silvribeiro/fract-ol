@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 12:59:09 by mda-silv          #+#    #+#             */
+/*   Updated: 2021/09/21 12:59:11 by mda-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int			clean_result(t_printf *conv)
+int	clean_result(t_printf *conv)
 {
-	int i;
+	int	i;
 	int	r;
 
 	i = 0;
@@ -17,13 +29,13 @@ int			clean_result(t_printf *conv)
 	return (r);
 }
 
-int			ft_add_result(char c, t_printf *conv, int p)
+int	ft_add_result(char c, t_printf *conv, int p)
 {
 	char	*tmp;
 	int		i;
 
 	i = 0;
-	tmp = (char*)ft_memalloc(sizeof(char) * conv->ret + 2);
+	tmp = (char *)ft_memalloc(sizeof(char) * conv->ret + 2);
 	while (i < conv->ret)
 	{
 		tmp[i] = conv->result[i];
@@ -41,13 +53,13 @@ t_printf	*init_conv(void)
 {
 	t_printf	*conv;
 
-	conv = (t_printf*)ft_memalloc(sizeof(t_printf));
+	conv = (t_printf *)ft_memalloc(sizeof(t_printf));
 	conv->result = ft_strnew(0);
 	conv->ret = 0;
 	return (conv);
 }
 
-int			ft_printf(const char *restrict format, ...)
+int	ft_printf(const char *restrict format, ...)
 {
 	int			i;
 	t_printf	*conv;
@@ -62,7 +74,7 @@ int			ft_printf(const char *restrict format, ...)
 			(format[i] == '%' && format[i + 1] == '%'))
 			i += ft_add_result('%', conv, 1);
 		else if (format[i] == '%')
-			i = conversionist((char*)format, i + 1, conv, args);
+			i = conversionist((char *)format, i + 1, conv, args);
 		else
 			ft_add_result(format[i], conv, 0);
 		i++;

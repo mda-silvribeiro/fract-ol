@@ -33,7 +33,7 @@
 # define ZERO			29
 # define SPACEBAR		49
 
-typedef struct			s_fractal
+typedef struct s_fractal
 {
 	int					fi;
 	int					i;

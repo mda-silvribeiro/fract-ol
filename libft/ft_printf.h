@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 12:59:19 by mda-silv          #+#    #+#             */
+/*   Updated: 2021/09/21 12:59:21 by mda-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -8,7 +20,7 @@
 # define CONVERSIONS "cCsSpdDiIoOuUxX"
 # define FLAGS "hlLjz +-#.0123456789z"
 
-typedef struct	s_printf
+typedef struct s_printf
 {
 	char		letter;
 	int			fieldwidth;

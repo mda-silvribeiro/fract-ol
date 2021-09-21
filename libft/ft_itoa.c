@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 12:42:46 by mda-silv          #+#    #+#             */
+/*   Updated: 2021/09/21 12:42:50 by mda-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char		*ft_minint(void)
+static char	*ft_minint(void)
 {
-	char *min;
+	char	*min;
 
 	min = (char *)malloc(sizeof(char) * 11 + 1);
 	if (min == NULL)
@@ -11,9 +23,9 @@ static char		*ft_minint(void)
 	return (min);
 }
 
-static char		*ft_makestring(int digits, int n, char *str)
+static char	*ft_makestring(int digits, int n, char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < digits)
@@ -25,7 +37,7 @@ static char		*ft_makestring(int digits, int n, char *str)
 	return (str);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	int		digits;
